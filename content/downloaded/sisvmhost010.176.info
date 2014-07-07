@@ -1,0 +1,106 @@
+Listsummary:
+
+(vim.vm.Summary) {
+   dynamicType = <unset>, 
+   vm = 'vim.VirtualMachine:176', 
+   runtime = (vim.vm.RuntimeInfo) {
+      dynamicType = <unset>, 
+      device = (vim.vm.DeviceRuntimeInfo) [
+         (vim.vm.DeviceRuntimeInfo) {
+            dynamicType = <unset>, 
+            runtimeState = (vim.vm.DeviceRuntimeInfo.VirtualEthernetCardRuntimeState) {
+               dynamicType = <unset>, 
+               vmDirectPathGen2Active = false, 
+               vmDirectPathGen2InactiveReasonOther = (string) [
+                  "vmNptIncompatibleNetwork"
+               ], 
+               vmDirectPathGen2InactiveReasonExtended = <unset>, 
+            }, 
+            key = 4000, 
+         }
+      ], 
+      host = 'vim.HostSystem:ha-host', 
+      connectionState = "connected", 
+      powerState = "poweredOn", 
+      faultToleranceState = "notConfigured", 
+      toolsInstallerMounted = false, 
+      suspendTime = <unset>, 
+      bootTime = "2014-05-08T08:57:01.544009Z", 
+      suspendInterval = 0, 
+      question = (vim.vm.QuestionInfo) null, 
+      memoryOverhead = 514134016, 
+      maxCpuUsage = 11733, 
+      maxMemoryUsage = 32768, 
+      numMksConnections = 0, 
+      recordReplayState = "inactive", 
+      cleanPowerOff = <unset>, 
+      needSecondaryReason = <unset>, 
+      onlineStandby = false, 
+      minRequiredEVCModeKey = <unset>, 
+   }, 
+   guest = (vim.vm.Summary.GuestSummary) {
+      dynamicType = <unset>, 
+      guestId = "sles10_64Guest", 
+      guestFullName = "Suse Linux Enterprise 10 (64-bit)", 
+      toolsStatus = "toolsOk", 
+      toolsVersionStatus = "guestToolsCurrent", 
+      toolsRunningStatus = "guestToolsRunning", 
+      hostName = "sivswdev02", 
+      ipAddress = "10.237.217.46", 
+   }, 
+   config = (vim.vm.Summary.ConfigSummary) {
+      dynamicType = <unset>, 
+      name = "sivswdev02", 
+      template = false, 
+      vmPathName = "[NFS_sinap01a_sie_disks_ec_infr_disk003] sivswdev02/sivswdev02.vmx", 
+      memorySizeMB = 32768, 
+      cpuReservation = 0, 
+      memoryReservation = 0, 
+      numCpu = 4, 
+      numEthernetCards = 1, 
+      numVirtualDisks = 1, 
+      uuid = "564d2aa5-8a96-3417-b70a-cba043419add", 
+      instanceUuid = "529dfb18-c9be-2cf2-0d99-df72871528b6", 
+      guestId = "sles10_64Guest", 
+      guestFullName = "Suse Linux Enterprise 10 (64-bit)", 
+      annotation = "Project : Engineering Services
+OS : SLES
+Version : 10
+Arch : 64
+Customer : gamlone1
+Email : ger.malone@intel.com", 
+      product = (vim.vApp.ProductInfo) null, 
+      installBootRequired = <unset>, 
+      ftInfo = (vim.vm.FaultToleranceConfigInfo) null, 
+   }, 
+   storage = (vim.vm.Summary.StorageSummary) {
+      dynamicType = <unset>, 
+      committed = 95474239499, 
+      uncommitted = 46260563968, 
+      unshared = 95474239499, 
+      timestamp = "2014-06-13T10:36:46.728443Z", 
+   }, 
+   quickStats = (vim.vm.Summary.QuickStats) {
+      dynamicType = <unset>, 
+      overallCpuUsage = 477, 
+      overallCpuDemand = <unset>, 
+      guestMemoryUsage = 983, 
+      hostMemoryUsage = 32451, 
+      guestHeartbeatStatus = "green", 
+      distributedCpuEntitlement = <unset>, 
+      distributedMemoryEntitlement = <unset>, 
+      staticCpuEntitlement = <unset>, 
+      staticMemoryEntitlement = <unset>, 
+      privateMemory = 32220, 
+      sharedMemory = 286, 
+      swappedMemory = 0, 
+      balloonedMemory = 0, 
+      consumedOverheadMemory = 231, 
+      ftLogBandwidth = <unset>, 
+      ftSecondaryLatency = <unset>, 
+      ftLatencyStatus = <unset>, 
+      compressedMemory = 0, 
+      uptimeSeconds = 5218579, 
+   }, 
+   overallStatus = "green", 
+}

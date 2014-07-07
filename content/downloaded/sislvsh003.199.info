@@ -1,0 +1,112 @@
+Listsummary:
+
+(vim.vm.Summary) {
+   dynamicType = <unset>, 
+   vm = 'vim.VirtualMachine:199', 
+   runtime = (vim.vm.RuntimeInfo) {
+      dynamicType = <unset>, 
+      device = (vim.vm.DeviceRuntimeInfo) [
+         (vim.vm.DeviceRuntimeInfo) {
+            dynamicType = <unset>, 
+            runtimeState = (vim.vm.DeviceRuntimeInfo.VirtualEthernetCardRuntimeState) {
+               dynamicType = <unset>, 
+               vmDirectPathGen2Active = false, 
+               vmDirectPathGen2InactiveReasonOther = (string) [
+                  "vmNptIncompatibleNetwork"
+               ], 
+               vmDirectPathGen2InactiveReasonExtended = <unset>, 
+            }, 
+            key = 4000, 
+         }
+      ], 
+      host = 'vim.HostSystem:ha-host', 
+      connectionState = "connected", 
+      powerState = "poweredOn", 
+      faultToleranceState = "notConfigured", 
+      dasVmProtection = (vim.vm.RuntimeInfo.DasProtectionState) null, 
+      toolsInstallerMounted = false, 
+      suspendTime = <unset>, 
+      bootTime = "2014-06-17T09:52:38.716378Z", 
+      suspendInterval = 0, 
+      question = (vim.vm.QuestionInfo) null, 
+      memoryOverhead = 92401664, 
+      maxCpuUsage = 10374, 
+      maxMemoryUsage = 6144, 
+      numMksConnections = 0, 
+      recordReplayState = "inactive", 
+      cleanPowerOff = <unset>, 
+      needSecondaryReason = <unset>, 
+      onlineStandby = true, 
+      minRequiredEVCModeKey = <unset>, 
+      consolidationNeeded = false, 
+   }, 
+   guest = (vim.vm.Summary.GuestSummary) {
+      dynamicType = <unset>, 
+      guestId = "sles11_64Guest", 
+      guestFullName = "Novell SUSE Linux Enterprise 11 (64-bit)", 
+      toolsStatus = "toolsOk", 
+      toolsVersionStatus = "guestToolsCurrent", 
+      toolsVersionStatus2 = "guestToolsSupportedNew", 
+      toolsRunningStatus = "guestToolsRunning", 
+      hostName = "silv-sisvmlab047", 
+      ipAddress = "10.237.216.180", 
+   }, 
+   config = (vim.vm.Summary.ConfigSummary) {
+      dynamicType = <unset>, 
+      name = "V_1957701", 
+      template = false, 
+      vmPathName = "[sie_shared_01] V_1957701/SLES_11_SP2_IA32E.vmx", 
+      memorySizeMB = 6144, 
+      cpuReservation = 0, 
+      memoryReservation = 0, 
+      numCpu = 4, 
+      numEthernetCards = 1, 
+      numVirtualDisks = 1, 
+      uuid = "564df24f-463c-3113-1175-edcf807a1fee", 
+      instanceUuid = "500420f4-4ab4-6ce0-be31-eb5e8bd0afde", 
+      guestId = "sles11_64Guest", 
+      guestFullName = "Novell SUSE Linux Enterprise 11 (64-bit)", 
+      annotation = "Project : CC Dev
+OS : SLES
+Version : 11
+Arch : 64
+Customer : tstruk
+Email : tadeusz.struk@intel.com
+", 
+      product = (vim.vApp.ProductInfo) null, 
+      installBootRequired = <unset>, 
+      ftInfo = (vim.vm.FaultToleranceConfigInfo) null, 
+      managedBy = (vim.ext.ManagedByInfo) null, 
+   }, 
+   storage = (vim.vm.Summary.StorageSummary) {
+      dynamicType = <unset>, 
+      committed = 23148264513, 
+      uncommitted = 21240389632, 
+      unshared = 23148264513, 
+      timestamp = "2014-07-07T18:37:20.654783Z", 
+   }, 
+   quickStats = (vim.vm.Summary.QuickStats) {
+      dynamicType = <unset>, 
+      overallCpuUsage = 17, 
+      overallCpuDemand = <unset>, 
+      guestMemoryUsage = 122, 
+      hostMemoryUsage = 5881, 
+      guestHeartbeatStatus = "green", 
+      distributedCpuEntitlement = <unset>, 
+      distributedMemoryEntitlement = <unset>, 
+      staticCpuEntitlement = <unset>, 
+      staticMemoryEntitlement = <unset>, 
+      privateMemory = 5810, 
+      sharedMemory = 0, 
+      swappedMemory = 0, 
+      balloonedMemory = 0, 
+      consumedOverheadMemory = 71, 
+      ftLogBandwidth = <unset>, 
+      ftSecondaryLatency = <unset>, 
+      ftLatencyStatus = <unset>, 
+      compressedMemory = 0, 
+      uptimeSeconds = 1761034, 
+      ssdSwappedMemory = <unset>, 
+   }, 
+   overallStatus = "green", 
+}

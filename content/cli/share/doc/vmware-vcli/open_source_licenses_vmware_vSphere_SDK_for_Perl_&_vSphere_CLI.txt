@@ -1,0 +1,873 @@
+open_source_licenses.txt
+
+VMware vSphere CLI and vSphere SDK for Perl 4.1 
+
+===========================================================================
+
+The following copyright statements and licenses apply to various open
+source software components (or portions thereof) that are distributed with
+this VMware software products.
+
+The VMware product that includes this file does not necessarily use all the
+open source software components referred to below and may also only use
+portions of a given component.
+
+-------------------------------------------------------------------------------------
+
+This file is applicable, as noted below, to the following VMware products:
+
+
+* Windows Installer for VMware vSphere SDK for Perl 4.1
+* Linux Installer for VMware vSphere SDK for Perl 4.1 (32-bit Edition)
+* Linux Installer for VMware vSphere SDK for Perl 4.1 (64-bit Edition)
+
+* Windows Installer for VMware vSphere CLI 4.1
+* Linux Installer for VMware vSphere CLI 4.1 (32-bit Edition)
+* Linux Installer for VMware vSphere CLI 4.1 (64-bit Edition)
+
+-------------------------------------------------------------------------------------
+
+===========================================================================
+TABLE OF CONTENTS
+===========================================================================
+
+
+The following is a listing of the open source components detailed in this
+document.  This list is provided for your convenience; please read further if
+you wish to review the copyright notice(s) and the full text of the license
+associated with each component.
+
+PART 1. THE FOLLOWING LICENSES ARE APPLICABLE TO ALL SIX PRODUCTS LISTED ABOVE.
+
+
+SECTION 1: BSD-STYLE, MIT-STYLE, OR SIMILAR STYLE LICENSE
+
+   >>> esxtop-3
+   >>> expat-1.95.8
+   >>> ncurses-5.5
+   >>> openssl-0.9.7j
+   >>> openssl-0.9.8g
+   >>> restop-3
+
+
+SECTION 2: THE FOLLOWING COMPONENT(S) ARE LICENSED UNDER THE TERMS OF THE PERL 
+LICENSE, WHICH ALLOWS THE CHOICE BETWEEN THE GNU GENERAL PUBLIC LICENSE AND THE 
+ARTISTIC LICENSE. 
+
+VMWARE IS REDISTRIBUTING THESE COMPONENTS UNDER THE TERMS OF THE ARTISTIC LICENSE. 
+ 
+   >>> archive-zip-1.2.6
+   >>> compress-raw-zlib-2.0.17
+   >>> compress-zlib-2.005
+   >>> crypt-ssleay-0.55-0.9.7
+   >>> crypt-ssleay-0.55-0.9.8
+   >>> Data-Dump-1.15              
+   >>> Data-Dumper-2.121 
+   >>> HTML-Parser-3.60
+   >>> io-compress-base-2.005
+   >>> io-compress-zlib-2.005
+   >>> libclass-methodmaker-perl-2.10
+   >>> libwww-perl-5.805
+   >>> soap-lite-0.710.08
+   >>> uri-1.37
+   >>> uuid-0.03
+   >>> version-0.78
+   >>> xml-libxml-1.63
+   >>> xml-libxml-common-0.13
+   >>> xml-namespacesupport-1.09
+   >>> xml-sax-0.16
+
+
+PART 2. IN ADDITION TO THE LICENSES LISTED IN PART I ABOVE, THE FOLLOWING LICENSE(S) 
+ARE ALSO APPLICABLE TO THE WINDOWS INSTALLER FOR VMWARE VSPHERE SDK FOR PERL 4.1 & 
+THE WINDOWS INSTALLER FOR VMWARE VSPHERE CLI 4.1.
+
+
+A. THE FOLLOWING COMPONENT(S) ARE LICENSED UNDER THE TERMS OF THE PERL 
+LICENSE, WHICH ALLOWS THE CHOICE BETWEEN THE GNU GENERAL PUBLIC LICENSE AND THE 
+ARTISTIC LICENSE. 
+
+VMWARE IS REDISTRIBUTING THESE COMPONENTS UNDER THE TERMS OF THE ARTISTIC LICENSE. 
+
+  >>> ActivePerl
+
+Appended Licenses:
+
+   >>> Artistic License
+
+-------------------------------------------------------------------------------------
+
+PART 1. THE FOLLOWING LICENSES ARE APPLICABLE TO ALL SIX PRODUCTS LISTED ABOVE.
+
+-------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+SECTION 1: BSD-STYLE, MIT-STYLE, OR SIMILAR STYLE LICENSE
+---------------------------------------------------------------------------
+
+The BSD-STYLE, MIT-STYLE, OR SIMILAR STYLE LICENSE is applicable to the following component(s).
+
+
+>>> esxtop-3
+
+Copyright (c) 1984, 1989, William LeFebvre, Rice University
+Copyright (c) 1989, 1990, 1992, William LeFebvre, Northwestern University
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT 
+SHALL THE AUTHOR OR HIS EMPLOYER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR 
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN 
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH 
+DAMAGE.
+
+
+>>> expat-1.95.8
+
+Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd
+                               and Clark Cooper
+Copyright (c) 2001, 2002, 2003 Expat maintainers.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+>>> ncurses-5.5
+
+ Copyright (c) 1998-2004,2005 Free Software Foundation, Inc.              
+                                                                          
+ Permission is hereby granted, free of charge, to any person obtaining a  
+ copy of this software and associated documentation files (the            
+ "Software"), to deal in the Software without restriction, including      
+ without limitation the rights to use, copy, modify, merge, publish,      
+ distribute, distribute with modifications, sublicense, and/or sell       
+ copies of the Software, and to permit persons to whom the Software is    
+ furnished to do so, subject to the following conditions:                 
+                                                                          
+ The above copyright notice and this permission notice shall be included  
+ in all copies or substantial portions of the Software.                   
+                                                                          
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS  
+ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF               
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.   
+ IN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,   
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR    
+ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR    
+ THE USE OR OTHER DEALINGS IN THE SOFTWARE.                               
+                                                                          
+ Except as contained in this notice, the name(s) of the above copyright   
+ holders shall not be used in advertising or otherwise to promote the     
+ sale, use or other dealings in this Software without prior written       
+ authorization.
+
+
+>>> openssl-0.9.7j
+
+  LICENSE ISSUES
+  ==============
+
+  The OpenSSL toolkit stays under a dual license, i.e. both the conditions of
+  the OpenSSL License and the original SSLeay license apply to the toolkit.
+  See below for the actual license texts. Actually both licenses are BSD-style
+  Open Source licenses. In case of any license issues related to OpenSSL
+  please contact openssl-core@openssl.org.
+
+  OpenSSL License
+  ---------------
+
+  Copyright (c) 1998-2006 The OpenSSL Project.  All rights reserved.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+ 
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+ 
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in
+     the documentation and/or other materials provided with the
+     distribution.
+ 
+  3. All advertising materials mentioning features or use of this
+     software must display the following acknowledgment:
+     "This product includes software developed by the OpenSSL Project
+     for use in the OpenSSL Toolkit. (http://www.openssl.org/)"
+ 
+  4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to
+     endorse or promote products derived from this software without
+     prior written permission. For written permission, please contact
+     openssl-core@openssl.org.
+ 
+  5. Products derived from this software may not be called "OpenSSL"
+     nor may "OpenSSL" appear in their names without prior written
+     permission of the OpenSSL Project.
+ 
+  6. Redistributions of any form whatsoever must retain the following
+     acknowledgment:
+     "This product includes software developed by the OpenSSL Project
+     for use in the OpenSSL Toolkit (http://www.openssl.org/)"
+ 
+  THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY
+  EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+  PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR
+  ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+  STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+  OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+  This product includes cryptographic software written by Eric Young
+  (eay@cryptsoft.com).  This product includes software written by Tim
+  Hudson (tjh@cryptsoft.com).
+ 
+
+  Original SSLeay License
+  -----------------------
+
+  Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
+  All rights reserved.
+ 
+  This package is an SSL implementation written
+  by Eric Young (eay@cryptsoft.com).
+  The implementation was written so as to conform with Netscapes SSL.
+ 
+  This library is free for commercial and non-commercial use as long as
+  the following conditions are aheared to.  The following conditions
+  apply to all code found in this distribution, be it the RC4, RSA,
+  lhash, DES, etc., code; not just the SSL code.  The SSL documentation
+  included with this distribution is covered by the same copyright terms
+  except that the holder is Tim Hudson (tjh@cryptsoft.com).
+ 
+  Copyright remains Eric Young's, and as such any Copyright notices in
+  the code are not to be removed.
+  If this package is used in a product, Eric Young should be given attribution
+  as the author of the parts of the library used.
+  This can be in the form of a textual message at program startup or
+  in documentation (online or textual) provided with the package.
+ 
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+  1. Redistributions of source code must retain the copyright
+     notice, this list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+  3. All advertising materials mentioning features or use of this software
+     must display the following acknowledgement:
+     "This product includes cryptographic software written by
+      Eric Young (eay@cryptsoft.com)"
+     The word 'cryptographic' can be left out if the rouines from the library
+     being used are not cryptographic related :-).
+  4. If you include any Windows specific code (or a derivative thereof) from
+     the apps directory (application code) you must include an acknowledgement:
+     "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+ 
+  THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+  OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  SUCH DAMAGE.
+ 
+  The licence and distribution terms for any publically available version or
+  derivative of this code cannot be changed.  i.e. this code cannot simply be
+  copied and put under another distribution licence
+  [including the GNU Public Licence.]
+
+
+>>> openssl-0.9.8g
+
+ Copyright (c) 1998-2007 The OpenSSL Project 
+ Copyright (c) 1995-1998 Eric A. Young, Tim J. Hudson 
+ All rights reserved.
+
+  The OpenSSL toolkit stays under a dual license, i.e. both the conditions of 
+  the OpenSSL License and the original SSLeay license apply to the toolkit. 
+  See below for the actual license texts. Actually both licenses are BSD-style 
+  Open Source licenses. In case of any license issues related to OpenSSL 
+  please contact openssl-core@openssl.org. 
+ 
+  OpenSSL License 
+  --------------- 
+ 
+Copyright (c) 1998-2007 The OpenSSL Project. All rights reserved. 
+ 
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions 
+are met: 
+ 
+1. Redistributions of source code must retain the above copyright 
+notice, this list of conditions and the following disclaimer.  
+ 
+2. Redistributions in binary form must reproduce the above copyright 
+notice, this list of conditions and the following disclaimer in 
+the documentation and/or other materials provided with the 
+distribution. 
+ 
+3. All advertising materials mentioning features or use of this 
+software must display the following acknowledgment: 
+"This product includes software developed by the OpenSSL Project 
+for use in the OpenSSL Toolkit. (http://www.openssl.org/)" 
+ 
+4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to 
+endorse or promote products derived from this software without 
+prior written permission. For written permission, please contact 
+openssl-core@openssl.org. 
+ 
+5. Products derived from this software may not be called "OpenSSL" 
+nor may "OpenSSL" appear in their names without prior written 
+permission of the OpenSSL Project. 
+ 
+6. Redistributions of any form whatsoever must retain the following 
+acknowledgment: 
+"This product includes software developed by the OpenSSL Project 
+for use in the OpenSSL Toolkit (http://www.openssl.org/)" 
+ 
+THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY 
+EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE OpenSSL PROJECT OR 
+ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+OF THE POSSIBILITY OF SUCH DAMAGE. 
+ 
+ 
+This product includes cryptographic software written by Eric Young 
+(eay@cryptsoft.com). This product includes software written by Tim 
+Hudson (tjh@cryptsoft.com). 
+ 
+ 
+ Original SSLeay License 
+ ----------------------- 
+ 
+Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com) 
+All rights reserved. 
+ 
+This package is an SSL implementation written 
+by Eric Young (eay@cryptsoft.com). 
+The implementation was written so as to conform with Netscapes SSL. 
+ 
+This library is free for commercial and non-commercial use as long as 
+the following conditions are aheared to. The following conditions 
+apply to all code found in this distribution, be it the RC4, RSA, 
+lhash, DES, etc., code; not just the SSL code. The SSL documentation 
+included with this distribution is covered by the same copyright terms 
+except that the holder is Tim Hudson (tjh@cryptsoft.com). 
+ 
+Copyright remains Eric Young's, and as such any Copyright notices in 
+the code are not to be removed. 
+If this package is used in a product, Eric Young should be given attribution 
+as the author of the parts of the library used. 
+This can be in the form of a textual message at program startup or 
+in documentation (online or textual) provided with the package. 
+ 
+Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions 
+are met: 
+
+1. Redistributions of source code must retain the copyright 
+notice, this list of conditions and the following disclaimer. 
+
+2. Redistributions in binary form must reproduce the above copyright 
+notice, this list of conditions and the following disclaimer in the 
+documentation and/or other materials provided with the distribution. 
+
+3. All advertising materials mentioning features or use of this software 
+must display the following acknowledgement:
+ 
+"This product includes cryptographic software written by 
+Eric Young (eay@cryptsoft.com)"
+ 
+The word 'cryptographic' can be left out if the rouines from the library 
+being used are not cryptographic related :-).
+ 
+4. If you include any Windows specific code (or a derivative thereof) from  
+the apps directory (application code) you must include an acknowledgement: 
+"This product includes software written by Tim Hudson (tjh@cryptsoft.com)" 
+ 
+THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE 
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL 
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS 
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT 
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY 
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
+SUCH DAMAGE. 
+ 
+The licence and distribution terms for any publically available version or 
+derivative of this code cannot be changed. i.e. this code cannot simply be 
+copied and put under another distribution licence 
+[including the GNU Public Licence.]
+
+
+>>> restop-3
+
+Copyright (c) 1984, 1989, William LeFebvre, Rice University
+Copyright (c) 1989, 1990, 1992, William LeFebvre, Northwestern University
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT 
+SHALL THE AUTHOR OR HIS EMPLOYER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR 
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN 
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH 
+DAMAGE.
+
+-------------------------------------------------------------------------------------
+SECTION 2: THE FOLLOWING COMPONENT(S) ARE LICENSED UNDER THE TERMS OF THE PERL 
+LICENSE, WHICH ALLOWS THE CHOICE BETWEEN THE GNU GENERAL PUBLIC LICENSE AND THE 
+ARTISTIC LICENSE. 
+
+VMWARE IS REDISTRIBUTING THESE COMPONENTS UNDER THE TERMS OF THE ARTISTIC LICENSE. 
+-------------------------------------------------------------------------------------
+
+The ArtistiC License is applicable to the following component(s).
+
+
+>>> archive-zip-1.2.6
+
+Some parts copyright 2006 - 2008 Adam Kennedy.
+
+Some parts copyright 2005 Steve Peters.
+
+Original work copyright 2000 - 2004 Ned Konz.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+ 
+   
+>>> compress-raw-zlib-2.0.17
+
+Copyright (c) 2005-2009 Paul Marquess. All rights reserved.
+This program is free software; you can redistribute it
+and/or modify it under the same terms as Perl itself.
+
+The directory zlib-src contains a subset of the 
+source files copied directly from zlib version 1.2.3.
+These files are Copyright(C) 1995-2005
+Jean-loup Gailly and Mark Adler.
+
+Full source for the zlib library is available at
+http://www.zlib.org
+
+
+>>> compress-zlib-2.005
+
+Copyright (c) 1995-2008 Paul Marquess. All rights reserved.
+This program is free software; you can redistribute it
+and/or modify it under the same terms as Perl itself.
+
+
+>>> crypt-ssleay-0.55-0.9.7
+
+Copyright (c) 2006-2007 David Landgren.
+Copyright (c) 1999-2003 Joshua Chamas.
+Copyright (c) 1998 Gisle Aas.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+Perl is distributed under either the Artistic licence or the GPL.
+
+Current Debian specific changes are copyright (c) 2003
+Stephen Zander gibreel@debian.org
+
+
+>>> crypt-ssleay-0.55-0.9.8
+
+Copyright (c) 2006-2007 David Landgren.
+Copyright (c) 1999-2003 Joshua Chamas.
+Copyright (c) 1998 Gisle Aas.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+Perl is distributed under either the Artistic licence or the GPL.
+
+Current Debian specific changes are copyright (c) 2003
+Stephen Zander <gibreel@debian.org>
+
+Copyright (c) 1999-2003 Joshua Chamas.
+Copyright (c) 1998 Gisle Aas.
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
+Perl is distributed under either the Artistic licence or the GPL
+
+Current Debian specific changes are copyright (c) 2003
+Stephen Zander <gibreel@debian.org>
+
+
+>>> Data-Dump-1.15
+
+The "Data::Dump" module is written by Gisle Aas <gisle@aas.no>, based on
+"Data::Dumper" by Gurusamy Sarathy <gsar@umich.edu>.
+
+Copyright 1998-2000,2003-2004,2008 Gisle Aas.
+Copyright 1996-1998 Gurusamy Sarathy.
+
+This library is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.              
+
+>>> Data-Dumper-2.121 
+
+Copyright 1998-1999,2003-2004 Gisle Aas.
+Copyright 1996-1998 Gurusamy Sarathy.
+
+This library is free software; you can redistribute it and/or modify it 
+under the same terms as Perl itself.
+
+
+>>> HTML-Parser-3.60
+
+   1995-2008 Gisle Aas. All rights reserved.
+   1999-2000 Michael A. Chase.  All rights reserved.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+
+>>> io-compress-base-2.005
+
+Copyright (c) 2005-2007 Paul Marquess. All rights reserved.
+This program is free software; you can redistribute it
+and/or modify it under the same terms as Perl itself.
+
+
+>>> io-compress-zlib-2.005
+
+Copyright (c) 2005-2007 Paul Marquess. All rights reserved.
+This program is free software; you can redistribute it
+and/or modify it under the same terms as Perl itself.
+
+
+>>> libclass-methodmaker-perl-2.10
+
+Copyright (c) 2004, 2003, 2002, 2001, 2000 Martyn J. Pearce.  This 
+program is free software; you can redistribute it and/or modify it 
+under the same terms as Perl itself.
+
+Copyright (c) 1996 Organic Online. All rights reserved. 
+
+Perl itself is dual licensed under the GPL and the Artistic license.  
+You can find them both in the /usr/share/common-licenses directory on 
+your Debian/GNU system.
+
+
+>>> libwww-perl-5.805
+
+(c) 1995-1999 Gisle Aas. All rights reserved.
+(c) 1995 Martijn Koster. All rights reserved.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+Larry Wall's "Artistic License" for perl can be found in
+/usr/share/common-licenses/Artistic.
+
+
+>>> soap-lite-0.710.08
+
+ Copyright (C) 2000-2001 Paul Kulchenko (paulclinger@yahoo.com)
+ SOAP::Lite is free software; you can redistribute it
+ and/or modify it under the same terms as Perl itself.
+
+>>> uri-1.37
+
+Copyright 1998-2004,2008 Gisle Aas.
+Copyright 1998 Graham Barr.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+>>> version-0.78
+
+This module can be distributed under the same terms as Perl.
+
+Copyright (C) 2004-2009 John Peacock
+
+
+>>> xml-libxml-1.63
+
+Copyright 2001-2002, AxKit.com Ltd. All rights reserved.
+
+This is free software, you may use it and distribute it under the same
+terms as Perl itself.
+
+Perl is distributed under your choice of the GNU General Public License 
+or the Artistic License.
+
+
+>>> xml-libxml-common-0.13
+
+Copyright (c) 2002 Christian Glahn, All rights reserved.
+
+XML::LibXML::Common is dual licensed under the same terms as Perl 
+itself.
+
+This means at your choice, either the Perl Artistic License, or
+the GNU GPL version 1 or higher.
+
+
+>>> xml-namespacesupport-1.09
+
+Copyright (c) 2001-2002 Robin Berjon. All rights reserved. This program 
+is free software; you can redistribute it and/or modify it under the 
+same terms as Perl itself.
+
+
+>>> xml-sax-0.16
+
+Copyright 2001. Matt Sergeant, Kip Hampton, Robin Berjon
+
+XML::SAX is dual licensed under the same terms as Perl itself.
+
+This means at your choice, either the Perl Artistic License, or
+the GNU GPL version 1 or higher.
+
+>>> uuid-0.03
+
+
+-------------------------------------------------------------------------------------
+
+PART 2. IN ADDITION TO THE LICENSES LISTED IN PART I ABOVE, THE FOLLOWING LICENSE(S) 
+ARE ALSO APPLICABLE TO THE WINDOWS INSTALLER FOR VMWARE VSPHERE SDK FOR PERL 4.1 & 
+THE WINDOWS INSTALLER FOR VMWARE VSPHERE CLI 4.1.
+
+-------------------------------------------------------------------------------------
+
+A. THE FOLLOWING COMPONENT(S) ARE LICENSED UNDER THE TERMS OF THE PERL 
+LICENSE, WHICH ALLOWS THE CHOICE BETWEEN THE GNU GENERAL PUBLIC LICENSE AND THE 
+ARTISTIC LICENSE. 
+
+VMWARE IS REDISTRIBUTING THESE COMPONENTS UNDER THE TERMS OF THE ARTISTIC LICENSE. 
+
+
+>>> ActivePerl
+
+VMware licenses ActivePerl from ActiveState, which is comprised of Perl components 
+that are licensed under the same license as Perl itself.
+
+
+
+
+==============================================================================
+APPENDIX. Standard License Files 
+===========================================================================
+
+---------------------------------------------------------------------------
+ Artistic License 
+---------------------------------------------------------------------------
+
+                   The "Artistic License"
+                        Preamble
+						
+The intent of this document is to state the conditions under which a
+Package may be copied, such that the Copyright Holder maintains some
+semblance of artistic control over the development of the package,
+while giving the users of the package the right to use and distribute
+the Package in a more-or-less customary fashion, plus the right to make
+reasonable modifications.
+
+Definitions:
+
+      "Package" refers to the collection of files distributed by the
+      Copyright Holder, and derivatives of that collection of files
+      created through textual modification.
+
+      "Standard Version" refers to such a Package if it has not been
+      modified, or has been modified in accordance with the wishes
+      of the Copyright Holder as specified below.
+
+      "Copyright Holder" is whoever is named in the copyright or
+      copyrights for the package.
+
+      "You" is you, if you're thinking about copying or distributing
+      this Package.
+
+      "Reasonable copying fee" is whatever you can justify on the
+      basis of media cost, duplication charges, time of people involved,
+      and so on.  (You will not be required to justify it to the
+      Copyright Holder, but only to the computing community at large
+      as a market that must bear the fee.)
+
+      "Freely Available" means that no fee is charged for the item
+      itself, though there may be fees involved in handling the item.
+      It also means that recipients of the item may redistribute it
+      under the same conditions they received it.
+
+1. You may make and give away verbatim copies of the source form of the
+Standard Version of this Package without restriction, provided that you
+duplicate all of the original copyright notices and associated disclaimers.
+
+2. You may apply bug fixes, portability fixes and other modifications
+derived from the Public Domain or from the Copyright Holder.  A Package
+modified in such a way shall still be considered the Standard Version.
+
+3. You may otherwise modify your copy of this Package in any way, provided
+that you insert a prominent notice in each changed file stating how and
+when you changed that file, and provided that you do at least ONE of the
+following:
+
+    a) place your modifications in the Public Domain or otherwise make them
+    Freely Available, such as by posting said modifications to Usenet or
+    an equivalent medium, or placing the modifications on a major archive
+    site such as uunet.uu.net, or by allowing the Copyright Holder to include
+    your modifications in the Standard Version of the Package.
+
+    b) use the modified Package only within your corporation or organization.
+
+    c) rename any non-standard executables so the names do not conflict
+    with standard executables, which must also be provided, and provide
+    a separate manual page for each non-standard executable that clearly
+    documents how it differs from the Standard Version.
+
+    d) make other distribution arrangements with the Copyright Holder.
+
+4. You may distribute the programs of this Package in object code or
+executable form, provided that you do at least ONE of the following:
+
+    a) distribute a Standard Version of the executables and library files,
+    together with instructions (in the manual page or equivalent) on where
+    to get the Standard Version.
+
+    b) accompany the distribution with the machine-readable source of
+    the Package with your modifications.
+
+    c) give non-standard executables non-standard names, and clearly
+    document the differences in manual pages (or equivalent), together
+    with instructions on where to get the Standard Version.
+
+    d) make other distribution arrangements with the Copyright Holder.
+
+5. You may charge a reasonable copying fee for any distribution of this
+Package.  You may charge any fee you choose for support of this
+Package.  You may not charge a fee for this Package itself.  However,
+you may distribute this Package in aggregate with other (possibly
+commercial) programs as part of a larger (possibly commercial) software
+distribution provided that you do not advertise this Package as a
+product of your own.  You may embed this Package's interpreter within
+an executable of yours (by linking); this shall be construed as a mere
+form of aggregation, provided that the complete Standard Version of the
+interpreter is so embedded.
+
+6. The scripts and library files supplied as input to or produced as
+output from the programs of this Package do not automatically fall
+under the copyright of this Package, but belong to whoever generated
+them, and may be sold commercially, and may be aggregated with this
+Package.  If such scripts or library files are aggregated with this
+Package via the so-called "undump" or "unexec" methods of producing a
+binary executable image, then distribution of such an image shall
+neither be construed as a distribution of this Package nor shall it
+fall under the restrictions of Paragraphs 3 and 4, provided that you do
+not represent such an executable image as a Standard Version of this
+Package.
+
+7. C subroutines (or comparably compiled subroutines in other
+languages) supplied by you and linked into this Package in order to
+emulate subroutines and variables of the language defined by this
+Package shall not be considered part of this Package, but are the
+equivalent of input as in Paragraph 6, provided these subroutines do
+not change the language in any way that would cause it to fail the
+regression tests for the language.
+
+8. Aggregation of this Package with a commercial distribution is always
+permitted provided that the use of this Package is embedded; that is,
+when no overt attempt is made to make this Package's interfaces visible
+to the end user of the commercial distribution.  Such use shall not be
+construed as a distribution of this Package.
+
+9. The name of the Copyright Holder may not be used to endorse or promote
+products derived from this software without specific prior written permission.
+
+10. THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+                        The End
+
+
+===========================================================================
+
+To the extent any open source components are licensed under the
+GPL and/or LGPL, or other similar licenses that require the
+source code and/or modifications to source code to be made
+available (as would be noted above), you may obtain a copy of
+the source code corresponding to the binaries for such open
+source components and modifications thereto, if any, (the
+"Source Files"), by downloading the Source Files from VMware's website at
+http://www.vmware.com/download/open_source.html, or by sending a request, with
+your name and address to: VMware, Inc., 3401 Hillview Avenue,
+Palo Alto, CA 94304,United States of America or email info@vmware.com.  All such
+requests should clearly specify:  OPEN SOURCE FILES REQUEST,
+Attention General Counsel. VMware shall mail a copy of the
+Source Files to you on a CD or equivalent physical medium.  This
+offer to obtain a copy of the Source Files is valid for three
+years from the date you acquired this Software product.
+
+[RCLI41GAKP032210]

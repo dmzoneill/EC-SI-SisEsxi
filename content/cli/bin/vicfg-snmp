@@ -1,0 +1,367 @@
+#!/usr/bin/perl -w
+#
+# Copyright 2007 VMware, Inc.  All rights reserved.
+#
+# VMware ESX Server SNMP Agent Configuration
+
+use strict;
+use warnings;
+
+use VMware::VIRuntime;
+use VMware::VILib;
+use VMware::VIExt;
+
+my %opts = (
+   vihost => {
+      alias => "h",
+      type => "=s",
+      help => qq!  The host to use when connecting via Virtual Center.  !,
+      required => 0,
+   },
+   'enable' => {
+      alias => "E",
+      type => "",
+      help => qq! Start SNMP service  !,
+      required => 0,
+   },
+   'disable' => {
+      alias => "D",
+      type => "",
+      help => qq! Stop SNMP service  !,
+      required => 0,
+   },
+   'port' => {
+      alias => "p",
+      type => "=i",
+      help => qq!  Sets the port of the snmp agent. The default is udp/162 !,
+      required => 0,
+   },
+   'communities' => {
+      alias => "c",
+      type => "=s",
+      help => qq!  Set communities separated by comma comm1[,...] (this overwrites previous settings) !,
+      required => 0,
+   },
+   'reset' => {
+      alias => "r",
+      type => "",
+      help => qq!  Clear communities and targets !,
+      required => 0,
+   },
+   'targets' => {
+      alias => "t",
+      type => "=s",
+      help => qq!  Set destination of notifications(traps) hostname[\@port][/community][,...] (this overwrites previous settings)
+        (IPv6 address valid for vSphere 4.0 and later) !,
+      required => 0,
+   },
+   'show' => {
+      alias => "s",
+      type => "",
+      help => qq!  Displays snmp agent configuration. !,
+      required => 0,
+   },
+   'test' => {
+      alias => "T",
+      type => "",
+      help => qq!  Send out a test notification to validate configuration. !,
+      required => 0,
+   },
+);
+
+Opts::add_options(%opts);
+Opts::parse();
+Opts::validate();
+
+my $enable = Opts::get_option('enable');
+my $disable = Opts::get_option('disable');
+my $port = Opts::get_option('port');
+my $comms = Opts::get_option('communities');
+my $targets = Opts::get_option('targets');
+my $reset = Opts::get_option('reset');
+my $show = Opts::get_option('show');
+my $test = Opts::get_option('test');
+
+Util::connect();
+
+Opts::assert_usage(defined($enable) || 
+                   defined($disable) || 
+                   defined($port) || 
+                   defined($comms) || 
+                   defined($reset) || 
+                   defined($targets) || 
+                   defined($test) || 
+                   defined($show),
+   "At least one of command argument must be supplied.");
+
+my $host_view = VIExt::get_host_view(1, ['configManager.snmpSystem']);
+
+unless (defined($host_view->{'configManager.snmpSystem'})) {
+   VIExt::fail("SNMP system is not available on this system.");
+}
+
+my $ss;
+
+eval {
+   $ss = Vim::get_view (mo_ref => $host_view->{'configManager.snmpSystem'});
+};
+if ($@) {
+   if ($@ =~ /no longer exists /) {
+      VIExt::fail("This command is not supported on this system.");
+   }
+}
+
+if (defined $enable) {
+   print "Enabling agent...\n";
+   my $start = 1;
+   my $spec = new HostSnmpConfigSpec(enabled => $start);
+   reconfigure_snmp_agent($ss, $spec);
+   print "Complete.\n";
+}
+
+if (defined $disable) {
+   print "Disabling agent...\n";
+   my $stop = 0;
+   my $spec = new HostSnmpConfigSpec(enabled => $stop);
+   reconfigure_snmp_agent($ss, $spec);
+   print "Complete.\n";
+}
+
+
+if (defined $port) {
+   print "Changing udp port to $port...\n";
+   my $spec = new HostSnmpConfigSpec(port => $port);
+   reconfigure_snmp_agent($ss, $spec);
+   print "Complete.\n";
+}
+
+if (defined $comms) {
+   print "Changing community list to: $comms...\n";
+   my @comlist = split(/,/, $comms);
+   my $spec = new HostSnmpConfigSpec(readOnlyCommunities => \@comlist);
+   reconfigure_snmp_agent($ss, $spec);
+   print "Complete.\n";
+}
+
+if (defined $targets) {
+   print "Changing notification(trap) targets list to: $targets...\n";
+   my @tgtlist = split(/,/, $targets);
+   my @destlist;
+   my $item;
+   
+   foreach $item (@tgtlist) {
+      my $host;
+      my $port = "";
+      my $comm;
+      # either ipv4, ipv6 or hostname
+      if ($item =~ /(\w[\w\d\.:-]*)(@(\d+)){0,1}\/([\w-]+)/) {
+         $host = $1;
+         if (defined $2) {
+	    $port = $3;
+         }
+         $comm = $4;
+         my $dest = new HostSnmpDestination(hostName => $host, 
+                                            port => $port, 
+                                            community => $comm);
+         push(@destlist, $dest);
+      } else {
+         # bug 421748
+         VIExt::fail("Error: target \"$item\" must specify destination/community and optionally a port number.");
+      }
+   }
+   my $spec = new HostSnmpConfigSpec( trapTargets => \@destlist);
+   reconfigure_snmp_agent($ss, $spec);
+   print "Complete.\n";
+}
+
+if (defined $reset) {
+   print "Clearing communities & notification(trap) targets...\n";
+   my @destlist;
+   push(@destlist, new HostSnmpDestination(hostName => "", 
+                                           port => 0, 
+                                           community => ""));
+   my @comlist;
+   push(@comlist, "");
+   my $spec = new HostSnmpConfigSpec(readOnlyCommunities => \@comlist, 
+                                               trapTargets => \@destlist);
+   reconfigure_snmp_agent($ss, $spec);
+   print "Complete.\n";
+}
+
+if (defined $show) {
+   my $cfgSpec;
+   $cfgSpec = $ss->configuration;
+   if (defined $cfgSpec) {
+      my $item;
+      print "Current SNMP agent settings:\n";
+      print "Enabled  : " . $cfgSpec->enabled . "\n";
+      print "UDP port : " . $cfgSpec->port . "\n";
+      print "\nCommunities :";
+      if (defined($cfgSpec->readOnlyCommunities)) {
+         foreach $item (@{$cfgSpec->readOnlyCommunities}) {
+            print "\n$item"; 
+         }
+      }
+      print "\n";
+      print "\nNotification targets :";
+      if (defined($cfgSpec->trapTargets)) {
+         foreach $item (@{$cfgSpec->trapTargets}) {
+            next unless ($item->hostName);
+            my $port = defined($item->port) ? "@" . $item->port : "";
+            my $community = defined($item->community) ? "/" . $item->community : "/";
+            print "\n" . $item->hostName . $port . $community; 
+         }
+      }
+      print "\n";
+   } else {
+      print "System does not have SNMP agent configuration supported.\n";
+   } 
+}
+
+if (defined $test) {
+   print "Sending test nofication(trap) to all configured targets...\n";
+   send_test_notification($ss);
+   print "Complete. Check with each target to see if trap was received.\n";  
+}
+
+Util::disconnect();
+
+0;
+
+sub send_test_notification {
+   my ($ss) = @_;
+   eval { $ss->SendTestNotification(); };
+   if ($@) {
+      VIExt::fail("Failed : " . $@->fault_string);
+   }
+}
+
+sub reconfigure_snmp_agent {
+   my ($ss, $spec) = @_;
+   eval { $ss->ReconfigureSnmpAgent( spec => $spec ); };
+   if ($@) {
+      VIExt::fail("Failed : " . $@->fault_string);
+   }
+}
+
+__END__
+
+=head1 NAME
+
+vicfg-snmp - configure the SNMP service
+
+=head1 SYNOPSIS
+
+ vicfg-snmp [<connection_options>]
+   [--communities <comm_list> |
+    --disable |
+    --enable |
+    --help |
+    --port <port_number> |
+    --reset |
+    --show |
+    --targets <targets> |
+    --test |
+    --vihost <esx_host>]
+
+=head1 DESCRIPTION
+
+Simple Network Management Protocol (SNMP) allows management programs to monitor and control 
+networked devices. The I<Basic System Administration> manual discusses using SNMP 
+in your vSphere environment in some detail. The I<vSphere Command-Line Interface Scripting Guide> explains
+setup with vSphere CLI commands. 
+
+=head1 OPTIONS
+
+=over
+
+=item B<--communities | -c> <comm1>[,...]
+
+Specifies communities, separated by commas. The settings specified 
+using this option overwrite any previous settings.
+
+=item B<connection_options>
+
+Specifies the target server and authentication information if required. Run C<vicfg-snmp --help>
+for a list of all connection options.
+
+=item B<--disable | -D>
+
+Stops the SNMP service on the host.
+
+=item B<--enable | -E>
+
+Starts the SNMP service on the host.
+
+=item B<--help>
+
+Prints a help message for each command-specific and each connection option. 
+Calling the script with no arguments or with C<--help> has the same effect.
+
+=item B<--port | -p> <port_number>
+
+Sets the port used by the SNMP agent. The default is UDP 161. 
+This is the port that the SNMP service uses to listen on for polling requests, 
+such as GET requests. You can also configure the port that the SNMP agent sends 
+data to on the target system using the C<--targets> option. That port is UDP 162 by default.
+
+=item B<--reset | -r>
+
+Clears all previously-specified communities and targets.
+
+=item B<--show | -s>
+
+Displays the current SNMP configuration.
+
+=item B<--targets | -t> <hostname[@port]> </community>[,...]
+
+Sets the destination for (notifications) traps. You can specify multiple targets, separated by commas. 
+
+The settings specified 
+using this flag overwrite any previous settings. For vSphere 4.0 and later, IPv6
+addresses are valid. 
+
+=item B<--test | -T>
+
+Sends a test notification that can be used to validate the SNMP configuration to the configured target or
+targets.  
+
+=item B<--vihost | -h>
+
+When you run a vSphere CLI command with the C<--server> option pointing 
+to a vCenter Server system, use C<--vihost> to specify the ESX/ESXi host to run the command against. 
+
+=back
+
+=head1 EXAMPLES
+
+The following examples assume you are specifying connection options, either 
+explicitly or, for example, by specifying the server, user name, and password. 
+Run vicfg-snmp --help for a list of common options including connection options.
+
+
+Display the SNMP agent configuration:
+
+ vicfg-snmp <conn_options> -s
+
+Set the community for the SNMP agent to public:
+
+ vicfg-snmp <conn_options> -c public
+
+Set my_comm1 and my_comm2 as the communities, overwriting any existing communities. 
+
+ vicfg-snmp <conn_options> -c my_comm1,my_comm2
+
+Enable the SNMP service:
+
+ vicfg-snmp <conn_options> -E
+
+Disable the SNMP service:
+
+ vicfg-snmp <conn_options> -D
+
+Set the SNMP agent port to port 163:
+
+ vicfg-snmp <conn_options> -p 163
+
+=cut

@@ -1,0 +1,614 @@
+(vim.host.NetworkConfig) {
+   dynamicType = <unset>, 
+   vswitch = (vim.host.VirtualSwitch.Config) [
+      (vim.host.VirtualSwitch.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         name = "vSwitch0", 
+         spec = (vim.host.VirtualSwitch.Specification) {
+            dynamicType = <unset>, 
+            numPorts = 128, 
+            bridge = (vim.host.VirtualSwitch.BondBridge) {
+               dynamicType = <unset>, 
+               nicDevice = (string) [
+                  "vmnic0"
+               ], 
+               beacon = (vim.host.VirtualSwitch.BeaconConfig) {
+                  dynamicType = <unset>, 
+                  interval = 1, 
+               }, 
+               linkDiscoveryProtocolConfig = (vim.host.LinkDiscoveryProtocolConfig) {
+                  dynamicType = <unset>, 
+                  protocol = "cdp", 
+                  operation = "listen", 
+               }, 
+            }, 
+            policy = (vim.host.NetworkPolicy) {
+               dynamicType = <unset>, 
+               security = (vim.host.NetworkPolicy.SecurityPolicy) {
+                  dynamicType = <unset>, 
+                  allowPromiscuous = false, 
+                  macChanges = true, 
+                  forgedTransmits = true, 
+               }, 
+               nicTeaming = (vim.host.NetworkPolicy.NicTeamingPolicy) {
+                  dynamicType = <unset>, 
+                  policy = "loadbalance_srcid", 
+                  reversePolicy = true, 
+                  notifySwitches = true, 
+                  rollingOrder = false, 
+                  failureCriteria = (vim.host.NetworkPolicy.NicFailureCriteria) {
+                     dynamicType = <unset>, 
+                     checkSpeed = "minimum", 
+                     speed = 10, 
+                     checkDuplex = false, 
+                     fullDuplex = false, 
+                     checkErrorPercent = false, 
+                     percentage = 0, 
+                     checkBeacon = false, 
+                  }, 
+                  nicOrder = (vim.host.NetworkPolicy.NicOrderPolicy) {
+                     dynamicType = <unset>, 
+                     activeNic = (string) [
+                        "vmnic0"
+                     ], 
+                  }, 
+               }, 
+               offloadPolicy = (vim.host.NetOffloadCapabilities) {
+                  dynamicType = <unset>, 
+                  csumOffload = true, 
+                  tcpSegmentation = true, 
+                  zeroCopyXmit = true, 
+               }, 
+               shapingPolicy = (vim.host.NetworkPolicy.TrafficShapingPolicy) {
+                  dynamicType = <unset>, 
+                  enabled = false, 
+                  averageBandwidth = <unset>, 
+                  peakBandwidth = <unset>, 
+                  burstSize = <unset>, 
+               }, 
+            }, 
+            mtu = <unset>, 
+         }, 
+      }, 
+      (vim.host.VirtualSwitch.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         name = "vSwitch1", 
+         spec = (vim.host.VirtualSwitch.Specification) {
+            dynamicType = <unset>, 
+            numPorts = 128, 
+            bridge = (vim.host.VirtualSwitch.BondBridge) {
+               dynamicType = <unset>, 
+               nicDevice = (string) [
+                  "vmnic1"
+               ], 
+               beacon = (vim.host.VirtualSwitch.BeaconConfig) {
+                  dynamicType = <unset>, 
+                  interval = 1, 
+               }, 
+               linkDiscoveryProtocolConfig = (vim.host.LinkDiscoveryProtocolConfig) {
+                  dynamicType = <unset>, 
+                  protocol = "cdp", 
+                  operation = "listen", 
+               }, 
+            }, 
+            policy = (vim.host.NetworkPolicy) {
+               dynamicType = <unset>, 
+               security = (vim.host.NetworkPolicy.SecurityPolicy) {
+                  dynamicType = <unset>, 
+                  allowPromiscuous = false, 
+                  macChanges = true, 
+                  forgedTransmits = true, 
+               }, 
+               nicTeaming = (vim.host.NetworkPolicy.NicTeamingPolicy) {
+                  dynamicType = <unset>, 
+                  policy = "loadbalance_srcid", 
+                  reversePolicy = true, 
+                  notifySwitches = true, 
+                  rollingOrder = false, 
+                  failureCriteria = (vim.host.NetworkPolicy.NicFailureCriteria) {
+                     dynamicType = <unset>, 
+                     checkSpeed = "minimum", 
+                     speed = 10, 
+                     checkDuplex = false, 
+                     fullDuplex = false, 
+                     checkErrorPercent = false, 
+                     percentage = 0, 
+                     checkBeacon = false, 
+                  }, 
+                  nicOrder = (vim.host.NetworkPolicy.NicOrderPolicy) {
+                     dynamicType = <unset>, 
+                     activeNic = (string) [
+                        "vmnic1"
+                     ], 
+                  }, 
+               }, 
+               offloadPolicy = (vim.host.NetOffloadCapabilities) {
+                  dynamicType = <unset>, 
+                  csumOffload = true, 
+                  tcpSegmentation = true, 
+                  zeroCopyXmit = true, 
+               }, 
+               shapingPolicy = (vim.host.NetworkPolicy.TrafficShapingPolicy) {
+                  dynamicType = <unset>, 
+                  enabled = false, 
+                  averageBandwidth = <unset>, 
+                  peakBandwidth = <unset>, 
+                  burstSize = <unset>, 
+               }, 
+            }, 
+            mtu = <unset>, 
+         }, 
+      }, 
+      (vim.host.VirtualSwitch.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         name = "vSwitch2", 
+         spec = (vim.host.VirtualSwitch.Specification) {
+            dynamicType = <unset>, 
+            numPorts = 128, 
+            bridge = (vim.host.VirtualSwitch.BondBridge) {
+               dynamicType = <unset>, 
+               nicDevice = (string) [
+                  "vmnic2"
+               ], 
+               beacon = (vim.host.VirtualSwitch.BeaconConfig) {
+                  dynamicType = <unset>, 
+                  interval = 1, 
+               }, 
+               linkDiscoveryProtocolConfig = (vim.host.LinkDiscoveryProtocolConfig) {
+                  dynamicType = <unset>, 
+                  protocol = "cdp", 
+                  operation = "listen", 
+               }, 
+            }, 
+            policy = (vim.host.NetworkPolicy) {
+               dynamicType = <unset>, 
+               security = (vim.host.NetworkPolicy.SecurityPolicy) {
+                  dynamicType = <unset>, 
+                  allowPromiscuous = false, 
+                  macChanges = true, 
+                  forgedTransmits = true, 
+               }, 
+               nicTeaming = (vim.host.NetworkPolicy.NicTeamingPolicy) {
+                  dynamicType = <unset>, 
+                  policy = "loadbalance_srcid", 
+                  reversePolicy = true, 
+                  notifySwitches = true, 
+                  rollingOrder = false, 
+                  failureCriteria = (vim.host.NetworkPolicy.NicFailureCriteria) {
+                     dynamicType = <unset>, 
+                     checkSpeed = "minimum", 
+                     speed = 10, 
+                     checkDuplex = false, 
+                     fullDuplex = false, 
+                     checkErrorPercent = false, 
+                     percentage = 0, 
+                     checkBeacon = false, 
+                  }, 
+                  nicOrder = (vim.host.NetworkPolicy.NicOrderPolicy) {
+                     dynamicType = <unset>, 
+                     activeNic = (string) [
+                        "vmnic2"
+                     ], 
+                  }, 
+               }, 
+               offloadPolicy = (vim.host.NetOffloadCapabilities) {
+                  dynamicType = <unset>, 
+                  csumOffload = true, 
+                  tcpSegmentation = true, 
+                  zeroCopyXmit = true, 
+               }, 
+               shapingPolicy = (vim.host.NetworkPolicy.TrafficShapingPolicy) {
+                  dynamicType = <unset>, 
+                  enabled = false, 
+                  averageBandwidth = <unset>, 
+                  peakBandwidth = <unset>, 
+                  burstSize = <unset>, 
+               }, 
+            }, 
+            mtu = <unset>, 
+         }, 
+      }
+   ], 
+   portgroup = (vim.host.PortGroup.Config) [
+      (vim.host.PortGroup.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         spec = (vim.host.PortGroup.Specification) {
+            dynamicType = <unset>, 
+            name = "VM Network", 
+            vlanId = 0, 
+            vswitchName = "vSwitch0", 
+            policy = (vim.host.NetworkPolicy) {
+               dynamicType = <unset>, 
+               security = (vim.host.NetworkPolicy.SecurityPolicy) {
+                  dynamicType = <unset>, 
+                  allowPromiscuous = <unset>, 
+                  macChanges = <unset>, 
+                  forgedTransmits = <unset>, 
+               }, 
+               nicTeaming = (vim.host.NetworkPolicy.NicTeamingPolicy) {
+                  dynamicType = <unset>, 
+                  policy = <unset>, 
+                  reversePolicy = <unset>, 
+                  notifySwitches = <unset>, 
+                  rollingOrder = <unset>, 
+                  failureCriteria = (vim.host.NetworkPolicy.NicFailureCriteria) {
+                     dynamicType = <unset>, 
+                     checkSpeed = <unset>, 
+                     speed = <unset>, 
+                     checkDuplex = <unset>, 
+                     fullDuplex = <unset>, 
+                     checkErrorPercent = <unset>, 
+                     percentage = <unset>, 
+                     checkBeacon = <unset>, 
+                  }, 
+                  nicOrder = (vim.host.NetworkPolicy.NicOrderPolicy) null, 
+               }, 
+               offloadPolicy = (vim.host.NetOffloadCapabilities) {
+                  dynamicType = <unset>, 
+                  csumOffload = <unset>, 
+                  tcpSegmentation = <unset>, 
+                  zeroCopyXmit = <unset>, 
+               }, 
+               shapingPolicy = (vim.host.NetworkPolicy.TrafficShapingPolicy) {
+                  dynamicType = <unset>, 
+                  enabled = <unset>, 
+                  averageBandwidth = <unset>, 
+                  peakBandwidth = <unset>, 
+                  burstSize = <unset>, 
+               }, 
+            }, 
+         }, 
+      }, 
+      (vim.host.PortGroup.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         spec = (vim.host.PortGroup.Specification) {
+            dynamicType = <unset>, 
+            name = "Management Network", 
+            vlanId = 0, 
+            vswitchName = "vSwitch0", 
+            policy = (vim.host.NetworkPolicy) {
+               dynamicType = <unset>, 
+               security = (vim.host.NetworkPolicy.SecurityPolicy) {
+                  dynamicType = <unset>, 
+                  allowPromiscuous = <unset>, 
+                  macChanges = <unset>, 
+                  forgedTransmits = <unset>, 
+               }, 
+               nicTeaming = (vim.host.NetworkPolicy.NicTeamingPolicy) {
+                  dynamicType = <unset>, 
+                  policy = "loadbalance_srcid", 
+                  reversePolicy = <unset>, 
+                  notifySwitches = true, 
+                  rollingOrder = false, 
+                  failureCriteria = (vim.host.NetworkPolicy.NicFailureCriteria) {
+                     dynamicType = <unset>, 
+                     checkSpeed = <unset>, 
+                     speed = <unset>, 
+                     checkDuplex = <unset>, 
+                     fullDuplex = <unset>, 
+                     checkErrorPercent = <unset>, 
+                     percentage = <unset>, 
+                     checkBeacon = false, 
+                  }, 
+                  nicOrder = (vim.host.NetworkPolicy.NicOrderPolicy) {
+                     dynamicType = <unset>, 
+                     activeNic = (string) [
+                        "vmnic0"
+                     ], 
+                  }, 
+               }, 
+               offloadPolicy = (vim.host.NetOffloadCapabilities) {
+                  dynamicType = <unset>, 
+                  csumOffload = <unset>, 
+                  tcpSegmentation = <unset>, 
+                  zeroCopyXmit = <unset>, 
+               }, 
+               shapingPolicy = (vim.host.NetworkPolicy.TrafficShapingPolicy) {
+                  dynamicType = <unset>, 
+                  enabled = <unset>, 
+                  averageBandwidth = <unset>, 
+                  peakBandwidth = <unset>, 
+                  burstSize = <unset>, 
+               }, 
+            }, 
+         }, 
+      }, 
+      (vim.host.PortGroup.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         spec = (vim.host.PortGroup.Specification) {
+            dynamicType = <unset>, 
+            name = "VMotion", 
+            vlanId = 0, 
+            vswitchName = "vSwitch1", 
+            policy = (vim.host.NetworkPolicy) {
+               dynamicType = <unset>, 
+               security = (vim.host.NetworkPolicy.SecurityPolicy) {
+                  dynamicType = <unset>, 
+                  allowPromiscuous = <unset>, 
+                  macChanges = <unset>, 
+                  forgedTransmits = <unset>, 
+               }, 
+               nicTeaming = (vim.host.NetworkPolicy.NicTeamingPolicy) {
+                  dynamicType = <unset>, 
+                  policy = <unset>, 
+                  reversePolicy = <unset>, 
+                  notifySwitches = <unset>, 
+                  rollingOrder = <unset>, 
+                  failureCriteria = (vim.host.NetworkPolicy.NicFailureCriteria) {
+                     dynamicType = <unset>, 
+                     checkSpeed = <unset>, 
+                     speed = <unset>, 
+                     checkDuplex = <unset>, 
+                     fullDuplex = <unset>, 
+                     checkErrorPercent = <unset>, 
+                     percentage = <unset>, 
+                     checkBeacon = <unset>, 
+                  }, 
+                  nicOrder = (vim.host.NetworkPolicy.NicOrderPolicy) null, 
+               }, 
+               offloadPolicy = (vim.host.NetOffloadCapabilities) {
+                  dynamicType = <unset>, 
+                  csumOffload = <unset>, 
+                  tcpSegmentation = <unset>, 
+                  zeroCopyXmit = <unset>, 
+               }, 
+               shapingPolicy = (vim.host.NetworkPolicy.TrafficShapingPolicy) {
+                  dynamicType = <unset>, 
+                  enabled = <unset>, 
+                  averageBandwidth = <unset>, 
+                  peakBandwidth = <unset>, 
+                  burstSize = <unset>, 
+               }, 
+            }, 
+         }, 
+      }, 
+      (vim.host.PortGroup.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         spec = (vim.host.PortGroup.Specification) {
+            dynamicType = <unset>, 
+            name = "Server", 
+            vlanId = 0, 
+            vswitchName = "vSwitch2", 
+            policy = (vim.host.NetworkPolicy) {
+               dynamicType = <unset>, 
+               security = (vim.host.NetworkPolicy.SecurityPolicy) {
+                  dynamicType = <unset>, 
+                  allowPromiscuous = <unset>, 
+                  macChanges = <unset>, 
+                  forgedTransmits = <unset>, 
+               }, 
+               nicTeaming = (vim.host.NetworkPolicy.NicTeamingPolicy) {
+                  dynamicType = <unset>, 
+                  policy = <unset>, 
+                  reversePolicy = <unset>, 
+                  notifySwitches = <unset>, 
+                  rollingOrder = <unset>, 
+                  failureCriteria = (vim.host.NetworkPolicy.NicFailureCriteria) {
+                     dynamicType = <unset>, 
+                     checkSpeed = <unset>, 
+                     speed = <unset>, 
+                     checkDuplex = <unset>, 
+                     fullDuplex = <unset>, 
+                     checkErrorPercent = <unset>, 
+                     percentage = <unset>, 
+                     checkBeacon = <unset>, 
+                  }, 
+                  nicOrder = (vim.host.NetworkPolicy.NicOrderPolicy) null, 
+               }, 
+               offloadPolicy = (vim.host.NetOffloadCapabilities) {
+                  dynamicType = <unset>, 
+                  csumOffload = <unset>, 
+                  tcpSegmentation = <unset>, 
+                  zeroCopyXmit = <unset>, 
+               }, 
+               shapingPolicy = (vim.host.NetworkPolicy.TrafficShapingPolicy) {
+                  dynamicType = <unset>, 
+                  enabled = <unset>, 
+                  averageBandwidth = <unset>, 
+                  peakBandwidth = <unset>, 
+                  burstSize = <unset>, 
+               }, 
+            }, 
+         }, 
+      }
+   ], 
+   pnic = (vim.host.PhysicalNic.Config) [
+      (vim.host.PhysicalNic.Config) {
+         dynamicType = <unset>, 
+         device = "vmnic0", 
+         spec = (vim.host.PhysicalNic.Specification) {
+            dynamicType = <unset>, 
+            ip = (vim.host.IpConfig) {
+               dynamicType = <unset>, 
+               dhcp = false, 
+               ipAddress = "", 
+               subnetMask = "", 
+               ipV6Config = (vim.host.IpConfig.IpV6AddressConfiguration) null, 
+            }, 
+            linkSpeed = (vim.host.PhysicalNic.LinkSpeedDuplex) null, 
+         }, 
+      }, 
+      (vim.host.PhysicalNic.Config) {
+         dynamicType = <unset>, 
+         device = "vmnic1", 
+         spec = (vim.host.PhysicalNic.Specification) {
+            dynamicType = <unset>, 
+            ip = (vim.host.IpConfig) {
+               dynamicType = <unset>, 
+               dhcp = false, 
+               ipAddress = "", 
+               subnetMask = "", 
+               ipV6Config = (vim.host.IpConfig.IpV6AddressConfiguration) null, 
+            }, 
+            linkSpeed = (vim.host.PhysicalNic.LinkSpeedDuplex) null, 
+         }, 
+      }, 
+      (vim.host.PhysicalNic.Config) {
+         dynamicType = <unset>, 
+         device = "vmnic2", 
+         spec = (vim.host.PhysicalNic.Specification) {
+            dynamicType = <unset>, 
+            ip = (vim.host.IpConfig) {
+               dynamicType = <unset>, 
+               dhcp = false, 
+               ipAddress = "", 
+               subnetMask = "", 
+               ipV6Config = (vim.host.IpConfig.IpV6AddressConfiguration) null, 
+            }, 
+            linkSpeed = (vim.host.PhysicalNic.LinkSpeedDuplex) null, 
+         }, 
+      }, 
+      (vim.host.PhysicalNic.Config) {
+         dynamicType = <unset>, 
+         device = "vmnic3", 
+         spec = (vim.host.PhysicalNic.Specification) {
+            dynamicType = <unset>, 
+            ip = (vim.host.IpConfig) {
+               dynamicType = <unset>, 
+               dhcp = false, 
+               ipAddress = "", 
+               subnetMask = "", 
+               ipV6Config = (vim.host.IpConfig.IpV6AddressConfiguration) null, 
+            }, 
+            linkSpeed = (vim.host.PhysicalNic.LinkSpeedDuplex) null, 
+         }, 
+      }
+   ], 
+   vnic = (vim.host.VirtualNic.Config) [
+      (vim.host.VirtualNic.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         device = "vmk0", 
+         portgroup = "Management Network", 
+         spec = (vim.host.VirtualNic.Specification) {
+            dynamicType = <unset>, 
+            ip = (vim.host.IpConfig) {
+               dynamicType = <unset>, 
+               dhcp = false, 
+               ipAddress = "10.102.246.88", 
+               subnetMask = "255.255.255.192", 
+               ipV6Config = (vim.host.IpConfig.IpV6AddressConfiguration) null, 
+            }, 
+            mac = "d8:9d:67:14:b3:ec", 
+            distributedVirtualPort = (vim.dvs.PortConnection) null, 
+            portgroup = "Management Network", 
+            mtu = 1500, 
+            tsoEnabled = true, 
+            netStackInstanceKey = "defaultTcpipStack", 
+         }, 
+      }, 
+      (vim.host.VirtualNic.Config) {
+         dynamicType = <unset>, 
+         changeOperation = <unset>, 
+         device = "vmk1", 
+         portgroup = "VMotion", 
+         spec = (vim.host.VirtualNic.Specification) {
+            dynamicType = <unset>, 
+            ip = (vim.host.IpConfig) {
+               dynamicType = <unset>, 
+               dhcp = false, 
+               ipAddress = "10.102.246.112", 
+               subnetMask = "255.255.255.192", 
+               ipV6Config = (vim.host.IpConfig.IpV6AddressConfiguration) null, 
+            }, 
+            mac = "00:50:56:6b:e8:9a", 
+            distributedVirtualPort = (vim.dvs.PortConnection) null, 
+            portgroup = "VMotion", 
+            mtu = 1500, 
+            tsoEnabled = true, 
+            netStackInstanceKey = "defaultTcpipStack", 
+         }, 
+      }
+   ], 
+   dnsConfig = (vim.host.DnsConfig) {
+      dynamicType = <unset>, 
+      dhcp = false, 
+      virtualNicDevice = <unset>, 
+      hostName = "wgcvsh002", 
+      domainName = "ir.intel.com", 
+      address = (string) [
+         "10.102.246.99", 
+         "10.248.2.1"
+      ], 
+      searchDomain = (string) [
+         "ir.intel.com", 
+         "ger.corp.intel.com"
+      ], 
+   }, 
+   ipRouteConfig = (vim.host.IpRouteConfig) null, 
+   consoleIpRouteConfig = (vim.host.IpRouteConfig) null, 
+   routeTableConfig = (vim.host.IpRouteTableConfig) null, 
+   ipV6Enabled = false, 
+   ipSecConfig = (vim.host.IpSecConfig) null, 
+   consoleIpSecConfig = (vim.host.IpSecConfig) null, 
+   netStackSpec = (vim.host.NetworkConfig.NetStackSpec) [
+      (vim.host.NetworkConfig.NetStackSpec) {
+         dynamicType = <unset>, 
+         netStackInstance = (vim.host.NetStackInstance) {
+            dynamicType = <unset>, 
+            key = "defaultTcpipStack", 
+            name = "defaultTcpipStack", 
+            dnsConfig = (vim.host.DnsConfig) {
+               dynamicType = <unset>, 
+               dhcp = false, 
+               virtualNicDevice = <unset>, 
+               hostName = "wgcvsh002", 
+               domainName = "ir.intel.com", 
+               address = (string) [
+                  "10.102.246.99", 
+                  "10.248.2.1"
+               ], 
+               searchDomain = (string) [
+                  "ir.intel.com", 
+                  "ger.corp.intel.com"
+               ], 
+            }, 
+            ipRouteConfig = (vim.host.IpRouteConfig) {
+               dynamicType = <unset>, 
+               defaultGateway = "10.102.246.65", 
+               gatewayDevice = <unset>, 
+               ipV6DefaultGateway = <unset>, 
+               ipV6GatewayDevice = <unset>, 
+            }, 
+            requestedMaxNumberOfConnections = 11000, 
+            congestionControlAlgorithm = "newreno", 
+            ipV6Enabled = false, 
+            routeTableConfig = (vim.host.IpRouteTableConfig) {
+               dynamicType = <unset>, 
+               ipRoute = (vim.host.IpRouteOp) [
+                  (vim.host.IpRouteOp) {
+                     dynamicType = <unset>, 
+                     changeOperation = "", 
+                     route = (vim.host.IpRouteEntry) {
+                        dynamicType = <unset>, 
+                        network = "0.0.0.0", 
+                        prefixLength = 0, 
+                        gateway = "10.102.246.65", 
+                        deviceName = "vmk0", 
+                     }, 
+                  }, 
+                  (vim.host.IpRouteOp) {
+                     dynamicType = <unset>, 
+                     changeOperation = "", 
+                     route = (vim.host.IpRouteEntry) {
+                        dynamicType = <unset>, 
+                        network = "10.102.246.64", 
+                        prefixLength = 26, 
+                        gateway = "0.0.0.0", 
+                        deviceName = "vmk0", 
+                     }, 
+                  }
+               ], 
+            }, 
+         }, 
+         operation = <unset>, 
+      }
+   ], 
+}
