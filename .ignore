@@ -1,0 +1,32 @@
+# Vendored VMware vSphere CLI 4.1.0 (esxcfg-* and vicfg-* scripts and the vSphere SDK for Perl), from content/cli/share/doc/vmware-vcli
+content/cli/
+
+# jQuery UI CSS Framework 1.8.13 smoothness theme (jqueryui.com)
+content/css/smoothness/jquery-ui-1.8.13.custom.css
+
+# fancyBox 2.1.3 stylesheet (fancyapps.com)
+content/css/jquery.fancybox.css
+
+# jQuery UI 1.8.13 (jqueryui.com)
+content/js/jquery-ui-1.8.13.custom.min.js
+
+# jQuery UI 1.8.18 (jqueryui.com)
+content/js/jquery-ui-1.8.18.custom.min.js
+
+# jQuery JavaScript Library 1.6.1 (jquery.com)
+content/js/jquery-1.6.1.min.js
+
+# jQuery JavaScript Library 1.7.2 (jquery.com)
+content/js/jquery-1.7.2.min.js
+
+# fancyBox 2.1.3 (fancyapps.com)
+content/js/jquery.fancybox.js
+
+# fancyBox 2.1.3 packed build (fancyapps.com)
+content/js/jquery.fancybox.pack.js
+
+# jQuery Smooth Scroll Plugin 1.4.5 (Karl Swedberg)
+content/js/jquery.smooth-scroll.min.js
+
+# Composer-generated autoload for the class map in composer.json
+vendor/
