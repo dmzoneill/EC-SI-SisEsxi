@@ -60,7 +60,7 @@ class LdapUser
         $img = imagecreatefromstring($photo);
         $account = $this->data['samaccountname'][0] ?? '';
         $account = is_string($account) ? $account : '';
-        if ($img instanceof \GdImage) {
+        if (is_object($img)) {
             imagejpeg($img, 'images/users/' . $account . '.jpg');
         }
 

@@ -33,11 +33,8 @@ function commandOutput(string $command): ?string
  */
 function diskPaths(): array
 {
-    $disks = array();
-    # $disks[0] = "/nfs/sie/disks/SIE-EC_esxi_disk003/";
-    # $disks[1] = "/nfs/sie/disks/SIE-EC_esxi_disk004/";
-
-    return $disks;
+    // NFS disk paths are intentionally not configured.
+    return array();
 }
 
 function ddisks(): void
@@ -483,7 +480,7 @@ function readBios(string $host): void
     $html .= "<td width='25%'><b>Version</b></td><td width='75%'>" . matchText($biosversion, 1) . '</td>';
     $html .= '</tr>';
     $html .= '<tr>';
-    $html .= "<td width='25%'><b>Manufactuer</b></td><td width='75%'>" . matchText($vendor, 1) . '</td>';
+    $html .= "<td width='25%'><b>Manufacturer</b></td><td width='75%'>" . matchText($vendor, 1) . '</td>';
     $html .= '</tr>';
     $html .= '<tr>';
     $html .= "<td width='25%'><b>Model</b></td><td width='75%'>" . matchText($model, 1) . '</td>';
