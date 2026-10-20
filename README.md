@@ -1,6 +1,6 @@
 # EC-SI-SisEsxi
 
-PHP web application that lists ESXi hosts and their virtual machines and can power those virtual machines on, off, or reset them. The inventory page title in `inc_header.php` is "Shannon ESXi Inventory". The `version` file in the repository root is `version=0.0.7`.
+PHP web application that lists ESXi hosts and their virtual machines and can power those virtual machines on, off, or reset them. The inventory page title in `inc_header.php` is "Shannon ESXi Inventory". The `version` file in the repository root is `version=0.0.8`.
 
 Host and VM details are read from text snapshots under `content/downloaded/`. Those snapshots are produced by SSHing to each host and running `vim-cmd` (and `vmware -l -v` for the host version). A separate console page embeds the VMware MKS ActiveX control.
 
