@@ -8,32 +8,32 @@ The tree also vendors VMware vSphere CLI 4.1.0 (Perl `esxcfg-*` / `vicfg-*` scri
 
 ## Layout
 
-| Path | Role |
-| --- | --- |
-| `index.php` | Inventory page. Calls `quickList()` once for each host speciality group. |
-| `index_console.php` | Console page. Sets `$vmconsole` and includes the shared header and footer. |
-| `inc_common.php` | Loads the classes, reads the HTTP user, checks group membership, and handles power and annotation requests. |
-| `inc_functions.php` | Sets `$libdir` and counts `*.info` snapshots. |
-| `inc_inventory.php` | Renders the inventory, looks up hosts, and implements `sync()`. |
-| `inc_header.php`, `inc_footer.php` | Page chrome, navigation, and front-end script tags. |
-| `classes/vmware.class.php` | SSH wrapper around remote `vim-cmd` power, summary, device, hardware, network, and annotation calls. |
-| `classes/ldap.class.php` | LDAP connection and user/group lookup. |
-| `classes/ldapuser.class.php` | LDAP person entry (`SieEsxi\LdapUser`). |
-| `classes/ldapgroup.class.php` | LDAP group membership. |
-| `content/sync.php` | CLI-style entry that includes the classes and calls `sync()`. |
-| `content/downloaded/` | Cached host files (`*.hwinfo`, `*.netinfo`, `*.version`) and per-VM files (`*.info`, `*.device`, `*.power`). |
-| `content/js/`, `content/css/`, `content/images/` | Vendored jQuery, jQuery UI, fancyBox, and images. `inc_header.php` loads the copies it references. |
-| `content/js/intel.js` | ActiveX console connect, CD-ROM attach, and power buttons. |
-| `content/activex/vmware-mks.cab` | MKS ActiveX control used by the console page. |
-| `content/.key/` | SSH identity material. The path the `Vmware` class uses is set in `classes/vmware.class.php`. |
-| `content/cli/` | Vendored vSphere CLI 4.1.0. |
-| `content/log.txt` | Append-only log opened by `Vmware` when the constructed user is not `root`. |
-| `composer.json`, `composer.lock` | Composer classmap for `classes/`. The lockfile has no packages. PHP files include classes directly. |
-| `.github/workflows/main.yml` | On push and pull request to `main`, and on a `refresh` `repository_dispatch`, calls `dmzoneill/dmzoneill/.github/workflows/dispatch.yaml@main` with `basic: "true"`. |
-| `.github/workflows/ai-responder.yml` | Comments on opened issues and pull requests. |
-| `.github/dependabot.yml` | Weekly updates for GitHub Actions and Composer. |
-| `.ignore` | Lists vendored paths (vSphere CLI, jQuery, fancyBox, Composer `vendor/`). |
-| `LICENSE` | Apache License 2.0. |
+| Path                                             | Role                                                                                                                                                                 |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `index.php`                                      | Inventory page. Calls `quickList()` once for each host speciality group.                                                                                             |
+| `index_console.php`                              | Console page. Sets `$vmconsole` and includes the shared header and footer.                                                                                           |
+| `inc_common.php`                                 | Loads the classes, reads the HTTP user, checks group membership, and handles power and annotation requests.                                                          |
+| `inc_functions.php`                              | Sets `$libdir` and counts `*.info` snapshots.                                                                                                                        |
+| `inc_inventory.php`                              | Renders the inventory, looks up hosts, and implements `sync()`.                                                                                                      |
+| `inc_header.php`, `inc_footer.php`               | Page chrome, navigation, and frontend script tags.                                                                                                                   |
+| `classes/vmware.class.php`                       | SSH wrapper around remote `vim-cmd` power, summary, device, hardware, network, and annotation calls.                                                                 |
+| `classes/ldap.class.php`                         | LDAP connection and user/group lookup.                                                                                                                               |
+| `classes/ldapuser.class.php`                     | LDAP person entry (`SieEsxi\LdapUser`).                                                                                                                              |
+| `classes/ldapgroup.class.php`                    | LDAP group membership.                                                                                                                                               |
+| `content/sync.php`                               | CLI-style entry that includes the classes and calls `sync()`.                                                                                                        |
+| `content/downloaded/`                            | Cached host files (`*.hwinfo`, `*.netinfo`, `*.version`) and per-VM files (`*.info`, `*.device`, `*.power`).                                                         |
+| `content/js/`, `content/css/`, `content/images/` | Vendored jQuery, jQuery UI, fancyBox, and images. `inc_header.php` loads the copies it references.                                                                   |
+| `content/js/intel.js`                            | ActiveX console connect, CD-ROM attach, and power buttons.                                                                                                           |
+| `content/activex/vmware-mks.cab`                 | MKS ActiveX control used by the console page.                                                                                                                        |
+| `content/.key/`                                  | SSH identity material. The path the `Vmware` class uses is set in `classes/vmware.class.php`.                                                                        |
+| `content/cli/`                                   | Vendored vSphere CLI 4.1.0.                                                                                                                                          |
+| `content/log.txt`                                | Append-only log opened by `Vmware` when the constructed user is not `root`.                                                                                          |
+| `composer.json`, `composer.lock`                 | Composer classmap for `classes/`. The lockfile has no packages. PHP files include classes directly.                                                                  |
+| `.github/workflows/main.yml`                     | On push and pull request to `main`, and on a `refresh` `repository_dispatch`, calls `dmzoneill/dmzoneill/.github/workflows/dispatch.yaml@main` with `basic: "true"`. |
+| `.github/workflows/ai-responder.yml`             | Comments on opened issues and pull requests.                                                                                                                         |
+| `.github/dependabot.yml`                         | Weekly updates for GitHub Actions and Composer.                                                                                                                      |
+| `.ignore`                                        | Lists vendored paths (vSphere CLI, jQuery, fancyBox, Composer `vendor/`).                                                                                            |
+| `LICENSE`                                        | Apache License 2.0.                                                                                                                                                  |
 
 `editform()` in `inc_inventory.php` prints an annotation form (project, OS, version, architecture, customer). Nothing else in the tree calls it. When the authenticated user is in the group from `inc_common.php`, that file accepts the matching POST fields (`pproject`, `pos`, `pversion`, `parch`, `puser`, `pusercon`, `phost`, `ppath`, `pvmid`) and writes the annotation through `Vmware::setAnnotation()`.
 
@@ -63,7 +63,11 @@ The application root is a single absolute path. It is assigned to `$libdir` in `
 - `ESX-Server,ESX-Server.Standalone,Lab-Server,Lab-Equipment`
 - `ESX-Server,ESX-Server.ilab,Lab-Server,Lab-Equipment`
 
-`index_console.php` is the console page. Query parameters `host` and `vmpath` are base64-encoded; `vmid` is not. The console and the `reset`, `poweron`, and `poweroff` actions run only when the authenticated user is a member of the group in `inc_common.php`. Otherwise the console page prints `You are not a member of SIE.IT` and exits. The console prompts for a root password in the browser and connects with the MKS control on port 902.
+`index_console.php` is the console page. Query parameters `host` and `vmpath` are base64-encoded; `vmid` is not.
+
+The console and the `reset`, `poweron`, and `poweroff` actions run only when the authenticated user is a member of the group in `inc_common.php`. Otherwise the console page prints `You are not a member of` plus that group name, and exits.
+
+The console prompts for a root password in the browser and connects with the MKS control on port 902.
 
 `content/sync.php` calls `sync()`. That function:
 
@@ -71,7 +75,7 @@ The application root is a single absolute path. It is assigned to `$libdir` in `
 2. For each host from `getNodes()`, writes hardware, network, and version output, then per-VM summary, device, and power output, under `content/temp/`.
 3. Replaces `content/downloaded/*` with those files, runs `chmod 770` on them, and `chown`s them to `ec_webadm:webadm`.
 
-`content/temp/` is not in the repository. `sync()` writes files there with `fopen`, so that directory has to exist before a sync. SSH uses the identity file path set in `classes/vmware.class.php` and logs in as `root` on the host name plus the suffix hardcoded in `Vmware::remotecall()`.
+`content/temp/` is not in the repository. `sync()` writes files there with `fopen`, so that directory has to exist before a sync. SSH uses the identity file path set in `classes/vmware.class.php` and logs in as `root` on the hostname plus the suffix hardcoded in `Vmware::remotecall()`.
 
 `diskPaths()` returns an empty list. The comment in that function says NFS disk paths are intentionally not configured, so `ddisks()` does not collect disk usage.
 
